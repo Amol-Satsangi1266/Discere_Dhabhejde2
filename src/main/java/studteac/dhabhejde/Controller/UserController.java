@@ -1,8 +1,12 @@
 package studteac.dhabhejde.Controller;
 
-import studteac.dhabhejde.Model.User;
-import studteac.dhabhejde.Service.UserService;
+
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import studteac.dhabhejde.dto.UserRequestDTO;
+import studteac.dhabhejde.dto.UserResponseDTO;
+import studteac.dhabhejde.Service.UserService;
 
 import java.util.List;
 
@@ -16,18 +20,27 @@ public class UserController {
         this.userService = userService;
     }
 
+    // Create User
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserResponseDTO createUser(
+            @Valid @RequestBody UserRequestDTO request) {
+
+        return userService.createUser(request);
     }
 
+    // Get User By ID
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
+    public UserResponseDTO getUserById(@PathVariable Long id) {
+
         return userService.getUserById(id);
     }
 
+    // Get All Users
     @GetMapping
-    public List<User> getAllUsers() {
+    public List<UserResponseDTO> getAllUsers() {
+
         return userService.getAllUsers();
     }
 }
+

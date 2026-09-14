@@ -1,6 +1,9 @@
 package studteac.dhabhejde.Service;
 
+
 import org.springframework.stereotype.Service;
+import studteac.dhabhejde.dto.UserRequestDTO;
+import studteac.dhabhejde.dto.UserResponseDTO;
 import studteac.dhabhejde.Model.User;
 import studteac.dhabhejde.Repository.UserRepository;
 
@@ -15,16 +18,52 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User createUser(User user) {
-        return userRepository.save(user);
+    // Create User
+    public UserResponseDTO createUser(UserRequestDTO request) {
+
+        User user = new User();
+
+        user.setName(request.getName());
+        user.setEmail(request.getEmail());
+        user.setPassword(request.getPassword());
+        user.setRole(request.getRole());
+        user.setProfileImage(request.getProfileImage());
+
+        User savedUser = userRepository.save(user);
+
+        return convertToResponseDTO(savedUser);
     }
 
-    public User getUserById(Long id) {
-        return userRepository.findById(id)
+    // Get User By ID
+    public UserResponseDTO getUserById(Long id) {
+
+        User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found"));
+
+        return convertToResponseDTO(user);
     }
 
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    // Get All Users
+    public List<UserResponseDTO> getAllUsers() {
+
+        return userRepository.findAll()
+                .stream()
+                .map(this::convertToResponseDTO)
+                .toList();
+    }
+
+    // Convert Entity → Response DTO
+    private UserResponseDTO convertToResponseDTO(User user) {
+
+        return new UserResponseDTO(
+                user.getId(),
+                user.getName(),
+                user.getEmail(),
+                user.getRole(),
+                user.getProfileImage(),
+                user.getCreatedAt(),
+                user.getUpdatedAt()
+        );
     }
 }
+
