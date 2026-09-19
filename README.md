@@ -69,7 +69,7 @@ Ensure you have the following installed on your local machine:
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contributing(Repo)
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -80,3 +80,4 @@ Contributions are what make the open-source community such an amazing place to l
 5. Open a Pull Request
 
 ---
+AMOL SATSANGI, Author
