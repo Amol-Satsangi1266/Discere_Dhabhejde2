@@ -9,10 +9,10 @@ import studteac.dhabhejde.Model.Role;
 
 public class UserRequestDTO {
 
-    @NotBlank(message = "Name is required")
+    @NotBlank(message = "Name is required and can't be blank")
     private String name;
 
-    @NotBlank(message = "Email is required")
+    @NotBlank(message = "Email is required and can't be blank")
     @Email(message = "Invalid email format")
     private String email;
 
