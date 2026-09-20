@@ -2,8 +2,8 @@ package studteac.dhabhejde.Service;
 
 
 import org.springframework.stereotype.Service;
-import studteac.dhabhejde.dto.UserRequestDTO;
-import studteac.dhabhejde.dto.UserResponseDTO;
+import studteac.dhabhejde.DTO.UserRequestDTO;
+import studteac.dhabhejde.DTO.UserResponseDTO;
 import studteac.dhabhejde.Model.User;
 import studteac.dhabhejde.Repository.UserRepository;
 

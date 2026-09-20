@@ -1,4 +1,4 @@
-package studteac.dhabhejde.dto;
+package studteac.dhabhejde.DTO;
 
 
 import jakarta.validation.constraints.Email;

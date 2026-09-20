@@ -4,8 +4,8 @@ package studteac.dhabhejde.Controller;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import studteac.dhabhejde.dto.UserRequestDTO;
-import studteac.dhabhejde.dto.UserResponseDTO;
+import studteac.dhabhejde.DTO.UserRequestDTO;
+import studteac.dhabhejde.DTO.UserResponseDTO;
 import studteac.dhabhejde.Service.UserService;
 
 import java.util.List;
