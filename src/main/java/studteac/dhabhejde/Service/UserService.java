@@ -4,6 +4,7 @@ package studteac.dhabhejde.Service;
 import org.springframework.stereotype.Service;
 import studteac.dhabhejde.DTO.UserRequestDTO;
 import studteac.dhabhejde.DTO.UserResponseDTO;
+import studteac.dhabhejde.Exception.ResourceNotFoundException;
 import studteac.dhabhejde.Model.User;
 import studteac.dhabhejde.Repository.UserRepository;
 
@@ -38,7 +39,7 @@ public class UserService {
     public UserResponseDTO getUserById(Long id) {
 
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
         return convertToResponseDTO(user);
     }

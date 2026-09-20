@@ -1,6 +1,7 @@
 package studteac.dhabhejde.Service;
 
 import org.springframework.stereotype.Service;
+import studteac.dhabhejde.Exception.ResourceNotFoundException;
 import studteac.dhabhejde.Model.Assignment;
 import studteac.dhabhejde.Repository.AssignmentRepository;
 
@@ -21,7 +22,7 @@ public class AssignmentService {
 
     public Assignment getAssignmentById(Long id) {
         return assignmentRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Assignment not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Assignment not found"));
     }
 
     public List<Assignment> getAllAssignments() {

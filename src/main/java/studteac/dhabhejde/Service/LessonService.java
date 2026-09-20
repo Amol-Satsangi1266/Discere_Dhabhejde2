@@ -1,6 +1,7 @@
 package studteac.dhabhejde.Service;
 
 import org.springframework.stereotype.Service;
+import studteac.dhabhejde.Exception.ResourceNotFoundException;
 import studteac.dhabhejde.Model.Lesson;
 import studteac.dhabhejde.Repository.LessonRepository;
 
@@ -21,7 +22,7 @@ public class LessonService {
 
     public Lesson getLessonById(Long id) {
         return lessonRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Lesson not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Lesson not found"));
     }
 
     public List<Lesson> getAllLessons() {

@@ -1,6 +1,7 @@
 package studteac.dhabhejde.Service;
 
 import org.springframework.stereotype.Service;
+import studteac.dhabhejde.Exception.ResourceNotFoundException;
 import studteac.dhabhejde.Model.Enrollment;
 import studteac.dhabhejde.Repository.EnrollmentRepository;
 
@@ -21,7 +22,7 @@ public class EnrollmentService {
 
     public Enrollment getEnrollmentById(Long id) {
         return enrollmentRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Enrollment not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Enrollment not found"));
     }
 
     public List<Enrollment> getAllEnrollments() {

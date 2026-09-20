@@ -1,6 +1,7 @@
 package studteac.dhabhejde.Service;
 
 import org.springframework.stereotype.Service;
+import studteac.dhabhejde.Exception.ResourceNotFoundException;
 import studteac.dhabhejde.Model.Submission;
 import studteac.dhabhejde.Repository.SubmissionRepository;
 
@@ -21,7 +22,7 @@ public class SubmissionService {
 
     public Submission getSubmissionById(Long id) {
         return submissionRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Submission not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Submission not found"));
     }
 
     public List<Submission> getAllSubmissions() {
