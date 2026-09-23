@@ -1,6 +1,7 @@
 package studteac.dhabhejde.Controller;
 
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,10 @@ public class UserController {
     }
 
     // Create User
+    @Operation(
+            summary = "Create a User",
+            description = "To create a User and giving unique identity to it"
+    )
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponseDTO createUser(
@@ -32,6 +37,10 @@ public class UserController {
     }
 
     // Get User By ID
+    @Operation(
+            summary = "Get student by ID",
+            description = "Fetches a student using the student's unique ID"
+    )
     @GetMapping("/{id}")
     public UserResponseDTO getUserById(@PathVariable Long id) {
 
@@ -39,6 +48,10 @@ public class UserController {
     }
 
     // Get All Users
+    @Operation(
+            summary = "Get students all",
+            description = "Fetches all Students"
+    )
     @GetMapping
     public List<UserResponseDTO> getAllUsers() {
 
