@@ -15,6 +15,6 @@ public class SwaggerConfig {
                         .info(new Info()
                                 .title("Student Management API")
                                 .version("1.0")
-                                .description("REST API for managing students"));
+                                .description("REST API for managing Students, Teachers and courses."));
         }
 }

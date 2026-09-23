@@ -1,11 +1,14 @@
 package studteac.dhabhejde.Controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import studteac.dhabhejde.Model.Lesson;
 import studteac.dhabhejde.Service.LessonService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+@Tag(name = "Lesson APIs", description = "APIs for managing Lessons")
 @RestController
 @RequestMapping("/api/lessons")
 public class LessonController {

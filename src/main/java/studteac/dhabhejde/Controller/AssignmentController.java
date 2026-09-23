@@ -1,11 +1,13 @@
 package studteac.dhabhejde.Controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import studteac.dhabhejde.Model.Assignment;
 import studteac.dhabhejde.Service.AssignmentService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Assignment APIs", description = "APIs for managing Assignments")
 @RestController
 @RequestMapping("/api/assignments")
 public class AssignmentController {

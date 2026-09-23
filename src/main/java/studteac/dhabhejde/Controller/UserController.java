@@ -1,6 +1,7 @@
 package studteac.dhabhejde.Controller;
 
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import studteac.dhabhejde.Service.UserService;
 
 import java.util.List;
 
+@Tag(name = "User APIs", description = "APIs for managing Students and Teachers")
 @RestController
 @RequestMapping("/api/users")
 public class UserController {

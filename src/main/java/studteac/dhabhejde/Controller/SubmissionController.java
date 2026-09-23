@@ -1,11 +1,13 @@
 package studteac.dhabhejde.Controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import studteac.dhabhejde.Model.Submission;
 import studteac.dhabhejde.Service.SubmissionService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Submission APIs", description = "APIs for managing Submissions")
 @RestController
 @RequestMapping("/api/submissions")
 public class SubmissionController {
