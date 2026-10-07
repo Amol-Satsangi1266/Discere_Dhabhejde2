@@ -18,14 +18,6 @@
 
 ---
 
-## 🛠️ Tech Stack
-
-* **Frontend:** *[e.g., React.js / Next.js / HTML5 & Tailwind CSS]*
-* **Backend:** *[e.g., Node.js / Express.js / Python Django]*
-* **Database:** *[e.g., MongoDB / PostgreSQL / MySQL]*
-* **Real-time Engine:** *[e.g., Socket.io / WebSockets]*
-
----
 
 ## 🚀 Getting Started
 
@@ -33,10 +25,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### Prerequisites
 
-Ensure you have the following installed on your local machine:
-* **Node.js** (v18+ recommended)
-* **npm** or **yarn**
-* *[Add any other prerequisite like Git or Docker if applicable]*
+
+
 
 ### Installation
 
